@@ -5,14 +5,14 @@
 @section('content')
     <!-- preloader  -->
     <div class="preloader">
-    <div class="loader-inner">
-        <div class="bohemio-loader-logo">
-            <img src="{{ asset('assets/img/bohemio-logo.png') }}" alt="Bohemio Ritual">
+        <div class="loader-inner">
+            <div class="bohemio-loader-logo">
+                <img src="{{ asset('assets/img/bohemio-logo.png') }}" alt="Bohemio Ritual">
+            </div>
+            <div class="bohemio-loader-ring"></div>
+            <span class="bohemio-loader-text">cargando ritual...</span>
         </div>
-        <div class="bohemio-loader-ring"></div>
-        <span class="bohemio-loader-text">cargando ritual...</span>
     </div>
-</div>
 
     <!-- bottom to top button -->
     <div class="bottom-to-top position-fixed bottom-0 end-0 mb-4 me-4 fs-xl cursor-pointer">
@@ -28,13 +28,9 @@
                         <img class="w-100" src="{{ asset('assets/img/logo.png') }}" alt="Bohemio Ritual">
                     </a>
                 </div>
-
                 <div class="menu-toggler d-flex align-items-center justify-content-lg-between flex-lg-row flex-column gap-xxl-6 gap-4 w-100">
                     <div class="category-nav-menu d-between flex-lg-row flex-column w-100">
                         <div class="category-menu w-100">
-                            {{-- <button class="category-toggle-btn">
-                                <i class="fas fa-th-large"></i> explorar
-                            </button> --}}
                             <div class="category-list-area">
                                 <div class="category-wrapper">
                                     <ul class="category-list-items d-flex flex-wrap align-items-baseline mb-xxl-15 mb-4">
@@ -84,7 +80,6 @@
                                             </a>
                                         </li>
                                     </ul>
-
                                     <div class="category-list-bottom border-dashed pt-xxl-8 pt-lg-6 pt-sm-4 pt-2 d-between gap-3 flex-wrap">
                                         <ul class="category-bottom-links d-flex align-items-center gap-lg-6 gap-sm-4 gap-3 flex-wrap">
                                             <li class="category-bottom-link">
@@ -97,7 +92,6 @@
                                                 <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer">Canal oficial</a>
                                             </li>
                                         </ul>
-
                                         <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="bttn-1">
                                             Visitar canal
                                             <span class="icon d-center icon-right">
@@ -108,7 +102,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        <!-- nav menu  -->
                         <div class="navbar-toggle-item w-100">
                             <ul class="nav-menu-items gap-3 gap-lg-8">
                                 <li class="menu-item">
@@ -134,7 +128,6 @@
                                         <li class="menu-link"><a href="#recentes">Novedades</a></li>
                                         <li class="menu-link"><a href="#about-bohemio">Identidad del canal</a></li>
                                         <li class="menu-link"><a href="#top-shows">Estúdio</a></li>
-
                                     </ul>
                                 </li>
                                 <li class="menu-item">
@@ -148,24 +141,6 @@
                             </ul>
                         </div>
                     </div>
-
-                    {{-- <div class="search-and-wishlist-area order-first order-lg-1 d-flex align-items-center justify-content-lg-end gap-xxl-6 gap-xl-4 gap-2 w-100">
-                        <form action="#" class="w-100 search-box">
-                            <div class="input-area border bc-n400">
-                                <input type="text" placeholder="Buscar contenido...">
-                                <button type="submit" class="icon-btn">
-                                    <span class="icon alt-size fs-xl fw-bold">
-                                        <i class="fas fa-search"></i>
-                                    </span>
-                                </button>
-                            </div>
-                        </form>
-                        <button class="icon-btn search-toggle-btn">
-                            <span class="icon fs-xl fw-bold">
-                                <i class="fas fa-search"></i>
-                            </span>
-                        </button>
-                    </div> --}}
                 </div>
 
                 <button class="navbar-toggle-btn d-block d-lg-none" type="button">
@@ -1275,13 +1250,3 @@
     </footer>
 @endsection
 
-@push('scripts')
-    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/js/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/js/magnific-popup.js_1.1.0.min.js') }}"></script>
-    <script src="{{ asset('assets/js/viewport.js') }}"></script>
-    <script src="{{ asset('assets/js/odometer.js_0.4.7.min.js') }}"></script>
-    <script src="{{ asset('assets/js/aos%402.3.1-dist-aos.js') }}"></script>
-    <script src="{{ asset('assets/js/select2.min.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
-@endpush

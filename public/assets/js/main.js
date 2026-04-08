@@ -15,12 +15,12 @@
 ---> top listens swiper
 ---> host profile swiper
 ---> host profile swiper 2
----> testimonial swiper 
+---> testimonial swiper
 ---> testimonial swiper 2
 ---> testimonial swiper 3
 ---> testimonial swiper 4
 ---> top listens swiper 2
----> features swiper 
+---> features swiper
 ---> more episodes
 ---> swiper bottom btn control
 ---> host social link toggle
@@ -54,7 +54,7 @@ $(document).ready(() => {
         $(this).toggleClass('active');
     });
 
-    // Navbar menu Auto Active Class 
+    // Navbar menu Auto Active Class
     var curUrl = $(location).attr('href');
     var terSegments = curUrl.split("/");
     var desired_segment = terSegments[terSegments.length - 1];
@@ -489,7 +489,7 @@ $(document).ready(() => {
         }
     });
 
-    // custom tab 
+    // custom tab
     $(".tablinks .nav-links").each(function () {
         var targetTab = $(this).closest(".singletab");
         targetTab.find(".tablinks .nav-links").each(function () {
@@ -557,7 +557,7 @@ $(document).ready(() => {
         easing: 'ease',
     });
 
-    // current Year 
+    // current Year
     $('.currentYear').text(new Date().getFullYear())
 
 });

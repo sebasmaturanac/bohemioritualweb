@@ -1,11 +1,5 @@
 /* =========== css table of contents =========
 
- * theme name: podcastio
- * version: 1.0
- * description: Podcastio - Audio podcast Bootstrap HTML Template
- * author: Pixelaxis
- * author-url: https://themeforest.net/user/pixelaxis
-
         # Plugin
      --> tabler icons
      --> Swiper js
@@ -1521,6 +1515,7 @@ header {
   height: 40px;
   position: relative;
   right: 0;
+  z-index: 10001;
   transition: 0.3s ease-in-out;
   padding: 10px;
   box-sizing: border-box;
