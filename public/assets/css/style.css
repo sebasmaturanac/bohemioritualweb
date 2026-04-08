@@ -46,7 +46,7 @@
   /* Color styles */
   /* primary and secondary colors */
   --primary-1: 255, 179, 64;
-  --primary-2: 122, 110, 255;
+  --primary-2: 255, 179, 64;
   --primary-3: 255, 77, 66;
   --secondary-1: 13, 226, 124;
   /* neutral colors */
@@ -1252,9 +1252,9 @@ header {
 }
 .header-section .category-menu .category-toggle-btn::after {
   position: absolute;
-  content: "\eb0b";
-  font-family: "tabler-icons";
-  font-weight: 400;
+  content: "\f054";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
   font-size: inherit;
   right: 30px;
   z-index: -1;
@@ -1264,7 +1264,7 @@ header {
   color: rgb(var(--primary-1));
 }
 .header-section .category-menu .category-toggle-btn.active::after {
-  content: "\eaf2";
+  content: "\f078";
 }
 @media (max-width: 1199px) {
   .header-section .category-menu .category-toggle-btn {
@@ -1417,9 +1417,9 @@ header {
 }
 .header-section .nav-menu-items .menu-item button::after {
   position: absolute;
-  content: "\eb0b";
-  font-family: "tabler-icons";
-  font-weight: 400;
+  content: "\f054";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
   font-size: inherit;
   right: -20px;
   z-index: -1;
@@ -1430,7 +1430,7 @@ header {
     color: rgb(var(--primary-1));
   }
   .header-section .nav-menu-items .menu-item button:hover::after {
-    content: "\eaf2";
+    content: "\f078";
   }
 }
 @media (max-width: 991px) {
@@ -1442,7 +1442,7 @@ header {
   color: rgb(var(--primary-1));
 }
 .header-section .nav-menu-items .menu-item.active button::after {
-  content: "\eaf2";
+  content: "\f078";
 }
 .header-section .nav-menu-items .menu-item .sub-menu .menu-link .active {
   color: rgb(var(--primary-1));
@@ -1854,10 +1854,10 @@ header {
   padding-left: 48px;
 }
 .fill-check-box li::after {
-  content: "\ea5e";
-  font-family: "tabler-icons";
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
   color: rgb(var(--n800));
-  font-weight: 600;
   position: absolute;
   top: 0;
   left: 0;
@@ -4760,70 +4760,104 @@ textarea::-internal-autofill-selected {
 
 .preloader {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  z-index: 1000;
-  background: rgb(var(--n900));
+  inset: 0;
+  z-index: 99999;
+  background: radial-gradient(circle at center, rgba(255, 179, 64, 0.08) 0%, rgba(7, 20, 49, 0) 35%), rgb(var(--n900));
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .preloader .loader-inner {
-  width: 175px;
-  height: 175px;
-  background-color: rgb(var(--primary-2));
-  border-radius: 10px;
   position: relative;
-  box-shadow: 5px 5px 0 0 rgb(var(--n0));
+  width: 240px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 18px;
 }
-.preloader .loader-inner .plate {
-  width: -moz-fit-content;
-  width: fit-content;
+
+.preloader .bohemio-loader-logo {
+  position: relative;
+  z-index: 2;
+  width: 130px;
+  max-width: 130px;
+  animation: bohemioPulse 1.8s ease-in-out infinite;
 }
-.preloader .loader-inner .plate .base,
-.preloader .loader-inner .plate .disc,
-.preloader .loader-inner .plate .center,
-.preloader .loader-inner .plate .circle {
-  border-radius: 100%;
+
+.preloader .bohemio-loader-logo img {
+  width: 100%;
+  display: block;
 }
-.preloader .loader-inner .plate .base {
-  width: 150px;
-  height: 150px;
-  background-color: rgb(var(--secondary-1));
-  animation: rotation 2s infinite linear;
-}
-.preloader .loader-inner .plate .disc {
-  width: 70px;
-  height: 70px;
-  background-color: rgb(var(--primary-1));
-}
-.preloader .loader-inner .plate .center {
-  width: 20px;
-  height: 20px;
-  background-color: rgb(var(--primary-3));
-}
-.preloader .loader-inner .plate .circle {
-  width: 111px;
-  height: 111px;
+
+.preloader .bohemio-loader-ring {
+  position: absolute;
+  width: 185px;
+  height: 185px;
+  border-radius: 50%;
+  border: 3px solid rgba(var(--primary-1), 0.15);
   border-top: 3px solid rgb(var(--primary-1));
-  border-bottom: 3px solid rgb(var(--primary-1));
-  border-left: 3px solid rgb(var(--secondary-1));
-  border-right: 3px solid rgb(var(--secondary-1));
+  border-right: 3px solid rgba(var(--primary-1), 0.55);
+  animation: bohemioSpin 1.4s linear infinite;
+  box-shadow: 0 0 25px rgba(255, 179, 64, 0.12);
 }
-.preloader .loader-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.preloader .bohemio-loader-ring::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 2px dashed rgba(var(--primary-1), 0.22);
+  animation: bohemioSpinReverse 7s linear infinite;
 }
-.preloader .plate .base,
-.preloader .plate .disc,
-.preloader .plate .circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.preloader .bohemio-loader-text {
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(var(--primary-1));
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0.9;
+}
+
+@keyframes bohemioSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bohemioSpinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bohemioPulse {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.88;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.96);
+    opacity: 0.88;
+  }
 }
 @keyframes rotation {
   from {

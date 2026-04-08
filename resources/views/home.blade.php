@@ -5,26 +5,18 @@
 @section('content')
     <!-- preloader  -->
     <div class="preloader">
-        <div class="loader-inner">
-            <div class="plate">
-                <div class="base">
-                    <div class="circle">
-                        <div class="disc">
-                            <div class="center"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="player-bar">
-                <div class="rect"></div>
-                <div class="circ"></div>
-            </div>
+    <div class="loader-inner">
+        <div class="bohemio-loader-logo">
+            <img src="{{ asset('assets/img/bohemio-logo.png') }}" alt="Bohemio Ritual">
         </div>
+        <div class="bohemio-loader-ring"></div>
+        <span class="bohemio-loader-text">cargando ritual...</span>
     </div>
+</div>
 
     <!-- bottom to top button -->
     <div class="bottom-to-top position-fixed bottom-0 end-0 mb-4 me-4 fs-xl cursor-pointer">
-        <i class="ti ti-arrow-up"></i>
+        <i class="fas fa-arrow-up"></i>
     </div>
 
     <!-- header section start  -->
@@ -41,7 +33,7 @@
                     <div class="category-nav-menu d-between flex-lg-row flex-column w-100">
                         <div class="category-menu w-100">
                             {{-- <button class="category-toggle-btn">
-                                <i class="ti ti-category"></i> explorar
+                                <i class="fas fa-th-large"></i> explorar
                             </button> --}}
                             <div class="category-list-area">
                                 <div class="category-wrapper">
@@ -109,7 +101,7 @@
                                         <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="bttn-1">
                                             Visitar canal
                                             <span class="icon d-center icon-right">
-                                                <i class="ti ti-arrow-narrow-right"></i>
+                                                <i class="fas fa-arrow-right"></i>
                                             </span>
                                         </a>
                                     </div>
@@ -163,14 +155,14 @@
                                 <input type="text" placeholder="Buscar contenido...">
                                 <button type="submit" class="icon-btn">
                                     <span class="icon alt-size fs-xl fw-bold">
-                                        <i class="ti ti-search"></i>
+                                        <i class="fas fa-search"></i>
                                     </span>
                                 </button>
                             </div>
                         </form>
                         <button class="icon-btn search-toggle-btn">
                             <span class="icon fs-xl fw-bold">
-                                <i class="ti ti-search"></i>
+                                <i class="fas fa-search"></i>
                             </span>
                         </button>
                     </div> --}}
@@ -193,7 +185,7 @@
                     <div class="hero-content text-center text-lg-start">
                         <span class="subheading-border fw-medium mb-4 fs-xl">
                             <span class="fs-2xl">
-                                <i class="ti ti-rocket"></i>
+                                <i class="fas fa-rocket"></i>
                             </span>
                             Comienza Bohemio Ritual
                         </span>
@@ -207,13 +199,12 @@
                             <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="bttn-1">
                                 Suscribite al canal
                                 <span class="icon d-center icon-right">
-                                    <i class="ti ti-arrow-narrow-right"></i>
+                                    <i class="fas fa-arrow-right"></i>
                                 </span>
                             </a>
-                            <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="bttn-1 bttn-outline alt-position">
-                                Visitar YouTube
+                            <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="bttn-1">Visitar YouTube
                                 <span class="icon d-center icon-right">
-                                    <i class="ti ti-arrow-narrow-right"></i>
+                                    <i class="fas fa-arrow-right"></i>
                                 </span>
                             </a>
                         </div>
@@ -256,7 +247,7 @@
                     <div class="text-center text-lg-start">
                         <span class="subheading-border fw-medium mb-4 fs-xl">
                             <span class="fs-2xl">
-                                <i class="ti ti-rocket"></i>
+                                <i class="fas fa-rocket"></i>
                             </span>
                             Contenido reciente
                         </span>
@@ -273,7 +264,7 @@
                             <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="bttn-1 bttn-outline alt-position">
                                 Ver canal completo
                                 <span class="icon d-center icon-right">
-                                    <i class="ti ti-arrow-narrow-right"></i>
+                                    <i class="fas fa-arrow-right"></i>
                                 </span>
                             </a>
                         </div>
@@ -288,7 +279,7 @@
                             <div class="d-flex align-items-center gap-4 flex-wrap flex-sm-nowrap">
                                 <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
                                     <span class="tcn-900 fs-xl">
-                                        <i class="ti ti-microphone"></i>
+                                        <i class="fas fa-microphone"></i>
                                     </span>
                                     <span class="fs-lg fw-medium text-nowrap link-text-2">
                                         Mesa Bohemia
@@ -296,7 +287,7 @@
                                 </a>
                                 <div class="episode-time d-flex align-items-center gap-2">
                                     <span class="tcn-900 fs-xl">
-                                        <i class="ti ti-clock"></i>
+                                        <i class="fas fa-clock"></i>
                                     </span>
                                     <span class="fs-lg fw-medium text-nowrap">
                                         En formato vivo
@@ -327,15 +318,13 @@
                             <div class="card-btns d-between flex-wrap flex-sm-nowrap gap-6 mt-lg-8 mt-6">
                                 <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="icon-btn d-center gap-3">
                                     <span class="icon fs-xl fw-bold">
-                                        <i class="ti ti-player-play"></i>
+                                        <i class="fas fa-play"></i>
                                     </span>
                                     <span class="text fw-semibold">
                                         Ver en YouTube
                                     </span>
                                 </a>
-                                <span class="tag-btn">
-                                    Destacado
-                                </span>
+
                             </div>
                         </div>
                     </div>
@@ -347,7 +336,7 @@
                                 <div class="d-flex align-items-center gap-4 flex-wrap flex-sm-nowrap">
                                     <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
                                         <span class="tcp-1 fs-xl">
-                                            <i class="ti ti-microphone"></i>
+                                            <i class="fas fa-microphone"></i>
                                         </span>
                                         <span class="fs-lg fw-medium text-nowrap link-text">
                                             Entrevistas a artistas
@@ -355,7 +344,7 @@
                                     </a>
                                     <div class="episode-time d-flex align-items-center gap-2">
                                         <span class="tcp-1 fs-xl">
-                                            <i class="ti ti-clock"></i>
+                                            <i class="fas fa-clock"></i>
                                         </span>
                                         <span class="fs-lg fw-medium text-nowrap">
                                             Conversaciones profundas
@@ -380,15 +369,13 @@
                             <div class="card-btns d-between flex-wrap flex-sm-nowrap gap-6 mt-lg-8 mt-6">
                                 <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="icon-btn d-center gap-3">
                                     <span class="icon fs-xl fw-bold">
-                                        <i class="ti ti-player-play"></i>
+                                        <i class="fas fa-play"></i>
                                     </span>
                                     <span class="text fw-semibold">
                                         Ver contenido
                                     </span>
                                 </a>
-                                <span class="tag-btn">
-                                    Entrevistas
-                                </span>
+
                             </div>
                         </div>
                         <div class="episode-card small-card p-xxl-10 p-6 bgc-2 rounded" data-aos="fade-right">
@@ -396,7 +383,7 @@
                                 <div class="d-flex align-items-center gap-sm-4 gap-2 flex-wrap flex-sm-nowrap">
                                     <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
                                         <span class="tcp-1 fs-xl">
-                                            <i class="ti ti-microphone"></i>
+                                            <i class="fas fa-microphone"></i>
                                         </span>
                                         <span class="fs-lg fw-medium text-nowrap link-text">
                                             Comunidad ritualera
@@ -404,7 +391,7 @@
                                     </a>
                                     <div class="episode-time d-flex align-items-center gap-2">
                                         <span class="tcp-1 fs-xl">
-                                            <i class="ti ti-clock"></i>
+                                            <i class="fas fa-clock"></i>
                                         </span>
                                         <span class="fs-lg fw-medium text-nowrap">
                                             En cada transmisión
@@ -429,15 +416,13 @@
                             <div class="card-btns d-between flex-wrap flex-sm-nowrap gap-6 mt-lg-8 mt-6">
                                 <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="icon-btn d-center gap-3">
                                     <span class="icon fs-xl fw-bold">
-                                        <i class="ti ti-player-play"></i>
+                                        <i class="fas fa-play"></i>
                                     </span>
                                     <span class="text fw-semibold">
                                         Sumate al canal
                                     </span>
                                 </a>
-                                <span class="tag-btn">
-                                    Comunidad
-                                </span>
+
                             </div>
                         </div>
                     </div>
@@ -466,7 +451,7 @@
                     <div class="About-us-content text-center text-lg-start">
                         <span class="subheading-border fw-medium mb-4 fs-xl">
                             <span class="fs-2xl">
-                                <i class="ti ti-rocket"></i>
+                                <i class="fas fa-rocket"></i>
                             </span>
                             Sobre Bohemio Ritual
                         </span>
@@ -490,7 +475,7 @@
                             <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="bttn-1 text-nowrap">
                                 Suscribite ahora
                                 <span class="icon d-center icon-right">
-                                    <i class="ti ti-arrow-narrow-right"></i>
+                                    <i class="fas fa-arrow-right"></i>
                                 </span>
                             </a>
                             <div class="listen-to-btns d-flex flex-wrap align-items-center gap-xl-4 gap-2">
@@ -544,7 +529,7 @@
                     <div class="text-center">
                         <span class="subheading-border fw-medium mb-4 fs-xl">
                             <span class="fs-2xl">
-                                <i class="ti ti-microphone-2"></i>
+                                <i class="fas fa-microphone-2"></i>
                             </span>
                             ¿Querés ser parte?
                         </span>
@@ -591,7 +576,7 @@
                         <a href="https://wa.me/5493815355966?text=Hola%20Bohemio%20Ritual%2C%20quiero%20participar%20del%20programa%20y%20compartir%20mi%20m%C3%BAsica%20o%20proyecto." target="_blank" rel="noopener noreferrer" class="bttn-1 bttn-fill fill-alt w-100" style="justify-content: center;">
                             Escribinos por WhatsApp
                             <span class="icon d-center icon-right">
-                                <i class="ti ti-brand-whatsapp"></i>
+                                <i class="fab fa-whatsapp"></i>
                             </span>
                         </a>
                     </div>
@@ -611,7 +596,7 @@
                         <div class="text-center text-lg-start">
                             <span class="subheading-border fw-medium mb-4 fs-xl">
                                 <span class="fs-2xl">
-                                    <i class="ti ti-rocket"></i>
+                                    <i class="fas fa-rocket"></i>
                                 </span>
                                 Nuestro Estúdio
                             </span>
@@ -621,10 +606,10 @@
                     <div class="col-lg-6 d-none d-lg-block">
                         <div class="swiper-btns swiper-top-btn d-flex align-items-center justify-content-end gap-4">
                             <div class="top-listens-2-prev button-prev fs-lg">
-                                <i class="ti ti-chevron-left"></i>
+                                <i class="fas fa-chevron-left"></i>
                             </div>
                             <div class="top-listens-2-next button-next fs-lg">
-                                <i class="ti ti-chevron-right"></i>
+                                <i class="fas fa-chevron-right"></i>
                             </div>
                         </div>
                     </div>
@@ -643,7 +628,7 @@
                                     <div class="content-area">
                                         <h4 class="show-title mb-4 fw-semibold">Cancion del Río</h4>
                                         <a href="https://youtu.be/pUsEY8Z8qOk?si=Tkqs81zGIolFQMXh" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
-                                            <span class="tcp-1"><i class="ti ti-microphone"></i></span>
+                                            <span class="tcp-1"><i class="fas fa-microphone"></i></span>
                                             <span class="fs-lg fw-medium link-text">Estudio Bohemio Ritual</span>
                                         </a>
                                     </div>
@@ -652,7 +637,7 @@
                                     <div class="audio-player">
                                         <div class="play-audio">
                                             <a href="https://youtu.be/pUsEY8Z8qOk?si=KcxTSKUhmhRpw9pO" target="_blank" rel="noopener noreferrer" class="toggle-play play fs-xl tcn-900">
-                                                <i class="ti ti-player-play"></i>
+                                                <i class="fas fa-play"></i>
                                             </a>
                                         </div>
                                         <div class="controls">
@@ -663,7 +648,7 @@
                                                     <div class="length fs-sm"></div>
                                                 </div>
                                                 <div class="volume-container">
-                                                    <div class="volume-button"><i class="ti ti-volume"></i></div>
+                                                    <div class="volume-button"><i class="fas fa-volume-up"></i></div>
                                                     <div class="volume-slider"><div class="volume-percentage"></div></div>
                                                 </div>
                                             </div>
@@ -686,7 +671,7 @@
                                     <div class="content-area">
                                         <h4 class="show-title mb-4 fw-semibold">Mientras Bailas</h4>
                                         <a href="https://youtu.be/MU5CiKWqT10?si=ZEH142g0iamud1B7" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
-                                            <span class="tcp-1"><i class="ti ti-microphone"></i></span>
+                                            <span class="tcp-1"><i class="fas fa-microphone"></i></span>
                                             <span class="fs-lg fw-medium link-text">Estudio Bohemio Ritual</span>
                                         </a>
                                     </div>
@@ -695,7 +680,7 @@
                                     <div class="audio-player">
                                         <div class="play-audio">
                                             <a href="https://youtu.be/MU5CiKWqT10?si=ZEH142g0iamud1B7" target="_blank" rel="noopener noreferrer" class="toggle-play play fs-xl tcn-900">
-                                                <i class="ti ti-player-play"></i>
+                                                <i class="fas fa-play"></i>
                                             </a>
                                         </div>
                                         <div class="controls">
@@ -706,7 +691,7 @@
                                                     <div class="length fs-sm"></div>
                                                 </div>
                                                 <div class="volume-container">
-                                                    <div class="volume-button"><i class="ti ti-volume"></i></div>
+                                                    <div class="volume-button"><i class="fas fa-volume-up"></i></div>
                                                     <div class="volume-slider"><div class="volume-percentage"></div></div>
                                                 </div>
                                             </div>
@@ -729,7 +714,7 @@
                                     <div class="content-area">
                                         <h4 class="show-title mb-4 fw-semibold">Horizonte de Octubre</h4>
                                         <a href="https://youtu.be/bsWm61cMoGs?si=DuyU7c3RqjmBvb5E" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
-                                            <span class="tcp-1"><i class="ti ti-microphone"></i></span>
+                                            <span class="tcp-1"><i class="fas fa-microphone"></i></span>
                                             <span class="fs-lg fw-medium link-text">Estudio Bohemio Ritual</span>
                                         </a>
                                     </div>
@@ -738,7 +723,7 @@
                                     <div class="audio-player">
                                         <div class="play-audio">
                                             <a href="https://youtu.be/bsWm61cMoGs?si=DuyU7c3RqjmBvb5E" target="_blank" rel="noopener noreferrer" class="toggle-play play fs-xl tcn-900">
-                                                <i class="ti ti-player-play"></i>
+                                                <i class="fas fa-play"></i>
                                             </a>
                                         </div>
                                         <div class="controls">
@@ -749,7 +734,7 @@
                                                     <div class="length fs-sm"></div>
                                                 </div>
                                                 <div class="volume-container">
-                                                    <div class="volume-button"><i class="ti ti-volume"></i></div>
+                                                    <div class="volume-button"><i class="fas fa-volume-up"></i></div>
                                                     <div class="volume-slider"><div class="volume-percentage"></div></div>
                                                 </div>
                                             </div>
@@ -772,7 +757,7 @@
                                     <div class="content-area">
                                         <h4 class="show-title mb-4 fw-semibold">Jazmin de Luna</h4>
                                         <a href="https://youtu.be/mx0XCCpkMjw?si=HXojZNAu9GfS2rGp" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
-                                            <span class="tcp-1"><i class="ti ti-microphone"></i></span>
+                                            <span class="tcp-1"><i class="fas fa-microphone"></i></span>
                                             <span class="fs-lg fw-medium link-text">Estudio Bohemio Ritual</span>
                                         </a>
                                     </div>
@@ -781,7 +766,7 @@
                                     <div class="audio-player">
                                         <div class="play-audio">
                                             <a href="https://youtu.be/mx0XCCpkMjw?si=HXojZNAu9GfS2rGp" target="_blank" rel="noopener noreferrer" class="toggle-play play fs-xl tcn-900">
-                                                <i class="ti ti-player-play"></i>
+                                                <i class="fas fa-play"></i>
                                             </a>
                                         </div>
                                         <div class="controls">
@@ -792,7 +777,7 @@
                                                     <div class="length fs-sm"></div>
                                                 </div>
                                                 <div class="volume-container">
-                                                    <div class="volume-button"><i class="ti ti-volume"></i></div>
+                                                    <div class="volume-button"><i class="fas fa-volume-up"></i></div>
                                                     <div class="volume-slider"><div class="volume-percentage"></div></div>
                                                 </div>
                                             </div>
@@ -815,7 +800,7 @@
                                     <div class="content-area">
                                         <h4 class="show-title mb-4 fw-semibold">Zona de Promesas</h4>
                                         <a href="https://youtu.be/hzMaO1RzSck?si=okYDnLRBr5xjdz9H" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
-                                            <span class="tcp-1"><i class="ti ti-microphone"></i></span>
+                                            <span class="tcp-1"><i class="fas fa-microphone"></i></span>
                                             <span class="fs-lg fw-medium link-text">Estudio Bohemio Ritual</span>
                                         </a>
                                     </div>
@@ -824,7 +809,7 @@
                                     <div class="audio-player">
                                         <div class="play-audio">
                                             <a href="https://youtu.be/hzMaO1RzSck?si=okYDnLRBr5xjdz9H" target="_blank" rel="noopener noreferrer" class="toggle-play play fs-xl tcn-900">
-                                                <i class="ti ti-player-play"></i>
+                                                <i class="fas fa-play"></i>
                                             </a>
                                         </div>
                                         <div class="controls">
@@ -835,7 +820,7 @@
                                                     <div class="length fs-sm"></div>
                                                 </div>
                                                 <div class="volume-container">
-                                                    <div class="volume-button"><i class="ti ti-volume"></i></div>
+                                                    <div class="volume-button"><i class="fas fa-volume-up"></i></div>
                                                     <div class="volume-slider"><div class="volume-percentage"></div></div>
                                                 </div>
                                             </div>
@@ -858,7 +843,7 @@
                                     <div class="content-area">
                                         <h4 class="show-title mb-4 fw-semibold">No Deberías</h4>
                                         <a href="https://youtu.be/sAAJL0f__Y8?si=dCFHifJb5Z6RuNuy" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
-                                            <span class="tcp-1"><i class="ti ti-microphone"></i></span>
+                                            <span class="tcp-1"><i class="fas fa-microphone"></i></span>
                                             <span class="fs-lg fw-medium link-text">Estudio Bohemio Ritual</span>
                                         </a>
                                     </div>
@@ -867,7 +852,7 @@
                                     <div class="audio-player">
                                         <div class="play-audio">
                                             <a href="https://youtu.be/sAAJL0f__Y8?si=dCFHifJb5Z6RuNuy" target="_blank" rel="noopener noreferrer" class="toggle-play play fs-xl tcn-900">
-                                                <i class="ti ti-player-play"></i>
+                                                <i class="fas fa-play"></i>
                                             </a>
                                         </div>
                                         <div class="controls">
@@ -878,7 +863,7 @@
                                                     <div class="length fs-sm"></div>
                                                 </div>
                                                 <div class="volume-container">
-                                                    <div class="volume-button"><i class="ti ti-volume"></i></div>
+                                                    <div class="volume-button"><i class="fas fa-volume-up"></i></div>
                                                     <div class="volume-slider"><div class="volume-percentage"></div></div>
                                                 </div>
                                             </div>
@@ -901,7 +886,7 @@
                                     <div class="content-area">
                                         <h4 class="show-title mb-4 fw-semibold">Chacarera del 55</h4>
                                         <a href="https://youtu.be/zbP6xxZGXYw?si=tBH8uMiVcrLsrccr" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
-                                            <span class="tcp-1"><i class="ti ti-microphone"></i></span>
+                                            <span class="tcp-1"><i class="fas fa-microphone"></i></span>
                                             <span class="fs-lg fw-medium link-text">Estudio Bohemio Ritual</span>
                                         </a>
                                     </div>
@@ -910,7 +895,7 @@
                                     <div class="audio-player">
                                         <div class="play-audio">
                                             <a href="https://youtu.be/zbP6xxZGXYw?si=tBH8uMiVcrLsrccr" target="_blank" rel="noopener noreferrer" class="toggle-play play fs-xl tcn-900">
-                                                <i class="ti ti-player-play"></i>
+                                                <i class="fas fa-play"></i>
                                             </a>
                                         </div>
                                         <div class="controls">
@@ -921,7 +906,7 @@
                                                     <div class="length fs-sm"></div>
                                                 </div>
                                                 <div class="volume-container">
-                                                    <div class="volume-button"><i class="ti ti-volume"></i></div>
+                                                    <div class="volume-button"><i class="fas fa-volume-up"></i></div>
                                                     <div class="volume-slider"><div class="volume-percentage"></div></div>
                                                 </div>
                                             </div>
@@ -941,10 +926,10 @@
                         <div class="top-listens-2-swiper-pagination d-none d-lg-block custom-swiper-pagination"></div>
                         <div class="swiper-btns swiper-bottom-btn d-flex d-lg-none align-items-center justify-content-center gap-4">
                             <div class="top-listens-2-prev button-prev fs-lg">
-                                <i class="ti ti-chevron-left"></i>
+                                <i class="fas fa-chevron-left"></i>
                             </div>
                             <div class="top-listens-2-next button-next fs-lg">
-                                <i class="ti ti-chevron-right"></i>
+                                <i class="fas fa-chevron-right"></i>
                             </div>
                         </div>
                     </div>
@@ -970,7 +955,7 @@
                     <div class="text-center text-lg-start">
                         <span class="subheading-border fw-medium mb-4 fs-xl">
                             <span class="fs-2xl">
-                                <i class="ti ti-rocket"></i>
+                                <i class="fas fa-rocket"></i>
                             </span>
                             Comunidad
                         </span>
@@ -979,8 +964,8 @@
                 </div>
                 <div class="col-lg-4 d-none d-lg-block">
                     <div class="swiper-btns swiper-top-btn d-flex align-items-center justify-content-end gap-4">
-                        <div class="ts-swiper-2-prev button-prev fs-lg"><i class="ti ti-chevron-left"></i></div>
-                        <div class="ts-swiper-2-next button-next fs-lg"><i class="ti ti-chevron-right"></i></div>
+                        <div class="ts-swiper-2-prev button-prev fs-lg"><i class="fas fa-chevron-left"></i></div>
+                        <div class="ts-swiper-2-next button-next fs-lg"><i class="fas fa-chevron-right"></i></div>
                     </div>
                 </div>
             </div>
@@ -1004,11 +989,11 @@
                             </div>
                             <div class="content-area text-center text-sm-start">
                                 <ul class="rating-list d-flex justify-content-center justify-content-sm-start gap-lg-2 gap-1 tcp-1 mb-lg-4 mb-2">
-                                    <li><i class="ti ti-star-filled"></i></li>
-                                    <li><i class="ti ti-star-filled"></i></li>
-                                    <li><i class="ti ti-star-filled"></i></li>
-                                    <li><i class="ti ti-star-filled"></i></li>
-                                    <li><i class="ti ti-star-half-filled"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star-half-alt"></i></li>
                                 </ul>
                                 <p class="quote-text fs-xl mb-4">
                                     “No se siente como un contenido armado. Se siente como estar presente en una charla que vale la pena escuchar.”
@@ -1043,11 +1028,11 @@
                             </div>
                             <div class="content-area text-center text-sm-start">
                                 <ul class="rating-list d-flex justify-content-center justify-content-sm-start gap-lg-2 gap-1 tcp-1 mb-lg-4 mb-2">
-                                    <li><i class="ti ti-star-filled"></i></li>
-                                    <li><i class="ti ti-star-filled"></i></li>
-                                    <li><i class="ti ti-star-filled"></i></li>
-                                    <li><i class="ti ti-star-filled"></i></li>
-                                    <li><i class="ti ti-star-half-filled"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star-half-alt"></i></li>
                                 </ul>
                                 <p class="quote-text fs-xl mb-4">
                                     “Tiene algo que hoy escasea: identidad. No intenta copiar, intenta construir su propia mística.”
@@ -1082,11 +1067,11 @@
                             </div>
                             <div class="content-area text-center text-sm-start">
                                 <ul class="rating-list d-flex justify-content-center justify-content-sm-start gap-lg-2 gap-1 tcp-1 mb-lg-4 mb-2">
-                                    <li><i class="ti ti-star-filled"></i></li>
-                                    <li><i class="ti ti-star-filled"></i></li>
-                                    <li><i class="ti ti-star-filled"></i></li>
-                                    <li><i class="ti ti-star-filled"></i></li>
-                                    <li><i class="ti ti-star-half-filled"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star-half-alt"></i></li>
                                 </ul>
                                 <p class="quote-text fs-xl mb-4">
                                     “La mezcla de folklore, charla y cercanía le da una personalidad que no se siente impostada.”
@@ -1121,11 +1106,11 @@
                             </div>
                             <div class="content-area text-center text-sm-start">
                                 <ul class="rating-list d-flex justify-content-center justify-content-sm-start gap-lg-2 gap-1 tcp-1 mb-lg-4 mb-2">
-                                    <li><i class="ti ti-star-filled"></i></li>
-                                    <li><i class="ti ti-star-filled"></i></li>
-                                    <li><i class="ti ti-star-filled"></i></li>
-                                    <li><i class="ti ti-star-filled"></i></li>
-                                    <li><i class="ti ti-star-half-filled"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star"></i></li>
+                                    <li><i class="fas fa-star-half-alt"></i></li>
                                 </ul>
                                 <p class="quote-text fs-xl mb-4">
                                     “Cuando un canal tiene verdad, se nota. Y acá hay una búsqueda clara de identidad cultural y humana.”
@@ -1146,8 +1131,8 @@
 
                 <div class="mt-lg-10 mt-8 text-center">
                     <div class="swiper-btns swiper-bottom-btn d-flex d-lg-none align-items-center justify-content-center gap-4">
-                        <div class="ts-swiper-2-prev button-prev fs-lg"><i class="ti ti-chevron-left"></i></div>
-                        <div class="ts-swiper-2-next button-next fs-lg"><i class="ti ti-chevron-right"></i></div>
+                        <div class="ts-swiper-2-prev button-prev fs-lg"><i class="fas fa-chevron-left"></i></div>
+                        <div class="ts-swiper-2-next button-next fs-lg"><i class="fas fa-chevron-right"></i></div>
                     </div>
                 </div>
             </div>
@@ -1168,7 +1153,7 @@
                         <input type="email" class="py-1" placeholder="Dejá tu email">
                         <button class="icon-btn">
                             <span class="icon alt-size fs-xl fw-bold">
-                                <i class="ti ti-send"></i>
+                                <i class="fas fa-paper-plane"></i>
                             </span>
                         </button>
                     </div>
@@ -1192,7 +1177,7 @@
                     <ul class="footer-social d-flex align-items-center gap-3 fs-xl">
                         <li>
                             <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer">
-                                <i class="ti ti-brand-youtube"></i>
+                                <i class="fab fa-youtube"></i>
                             </a>
                         </li>
                     </ul>
@@ -1218,20 +1203,20 @@
                             <li>
                                 <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="d-flex align-items-center gap-3 alt">
                                     <span class="tcp-1 fs-xl">
-                                        <i class="ti ti-brand-youtube"></i>
+                                        <i class="fab fa-youtube"></i>
                                     </span>
                                     @BohemioRitual
                                 </a>
                             </li>
                             <li>
                                 <span class="d-flex align-items-center gap-3 alt">
-                                    <span class="tcp-1 fs-xl"><i class="ti ti-music"></i></span>
+                                    <span class="tcp-1 fs-xl"><i class="fas fa-music"></i></span>
                                     Streaming de folklore, charlas y artistas
                                 </span>
                             </li>
                             <li>
                                 <span class="d-flex align-items-center gap-3 alt">
-                                    <span class="tcp-1 fs-xl"><i class="ti ti-map-pin"></i></span>
+                                    <span class="tcp-1 fs-xl"><i class="fas fa-map-marker-alt"></i></span>
                                     Argentina
                                 </span>
                             </li>
