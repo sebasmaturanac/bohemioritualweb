@@ -1227,11 +1227,24 @@
             </div>
 
             <div class="footer-bottom d-between flex-wrap-reverse gap-2 py-lg-8 py-sm-6 py-4 bt-2">
-                <span>
-                    Copyright © <span class="currentYear"></span>
-                    <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="tcp-1 link-text-2">Bohemio Ritual</a>
-                    Todos los derechos reservados.
-                </span>
+                <div class="footer-copyright-nerdostech">
+                    <span>
+                        Copyright © <span class="currentYear"></span>
+                        <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="tcp-1 link-text-2">
+                            Bohemio Ritual
+                        </a>
+                        Todos los derechos reservados.
+                    </span>
+
+                    <div class="developed-by-nerdostech">
+                        <span>Sitio desarrollado por</span>
+                        <a href="https://nerdostech.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('assets/img/nedostech.png') }}" alt="NerdosTech Solutions">
+                            <strong>NerdosTech Solutions</strong>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="record-slide-wrapper d-none d-lg-block">
                     <div class="record-img-animation d-flex align-items-center">
                         <img class="w-100" src="{{ asset('assets/img/record-4.png') }}" alt="record">
@@ -1239,10 +1252,17 @@
                         <img class="w-100" src="{{ asset('assets/img/record-4.png') }}" alt="record">
                     </div>
                 </div>
+
                 <div class="footer-widget">
                     <ul class="footer-menu d-flex gap-lg-6 gap-sm-4 gap-2 fw-normal">
-                        <li><a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer">Canal oficial</a></li>
-                        <li><a href="#newsletter-02">Novedades</a></li>
+                        <li>
+                            <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer">
+                                Canal oficial
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#newsletter-02">Novedades</a>
+                        </li>
                     </ul>
                 </div>
             </div>
