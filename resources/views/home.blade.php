@@ -10,7 +10,7 @@
                 <img src="{{ asset('assets/img/bohemio-logo.png') }}" alt="Bohemio Ritual">
             </div>
             <div class="bohemio-loader-ring"></div>
-            <span class="bohemio-loader-text">cargando ritual...</span>
+            <span class="bohemio-loader-text">cargando el Ritual...</span>
         </div>
     </div>
 
@@ -62,7 +62,7 @@
                                             </a>
                                         </li>
                                         <li class="category-item">
-                                            <a href="#testimonios" class="category-link p-xxl-8 p-sm-4 p-2 d-flex flex-column gap-0 rounded-3">
+                                            <a href="#top-shows" class="category-link p-xxl-8 p-sm-4 p-2 d-flex flex-column gap-0 rounded-3">
                                                 <img class="category-thumb mb-xxl-8 mb-lg-6 mb-sm-4 mb-2 rounded-3" src="{{ asset('assets/img/category-4.png') }}" alt="Comunidad">
                                                 <span class="category-title fs-three mb-xxl-6 mb-lg-4 mb-2">Comunidad</span>
                                                 <p class="tcn-40 char-limit" data-maxlength="60">
@@ -119,7 +119,7 @@
                                     <ul class="sub-menu">
                                         <li class="menu-link"><a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer">Ir a YouTube</a></li>
                                         <li class="menu-link"><a href="#top-shows">Programas destacados</a></li>
-                                        <li class="menu-link"><a href="#testimonios">Comunidad</a></li>
+                                        <li class="menu-link"><a href="#top-shows">Comunidad</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item">
@@ -133,7 +133,7 @@
                                 <li class="menu-item">
                                     <button>Comunidad</button>
                                     <ul class="sub-menu">
-                                        <li class="menu-link"><a href="#testimonios">Qué dice la audiencia</a></li>
+                                        <li class="menu-link"><a href="#top-shows">Qué dice la audiencia</a></li>
                                         <li class="menu-link"><a href="#newsletter-02">Recibir novedades</a></li>
                                         <li class="menu-link"><a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer">Suscribite</a></li>
                                     </ul>
@@ -564,6 +564,7 @@
         <div class="top-wave-shape mt-n1">
             <img class="w-100" src="{{ asset('assets/img/top-wave-shape.png') }}" alt="wave shape">
         </div>
+
         <div class="top-listens-list-wrapper pt-120 pb-120">
             <div class="container mb-lg-15 mb-sm-10 mb-8">
                 <div class="row align-items-center g-6" data-aos="flip-left">
@@ -578,12 +579,13 @@
                             <span class="display-four">Compartiendo el Ritual con amigos</span>
                         </div>
                     </div>
+
                     <div class="col-lg-6 d-none d-lg-block">
                         <div class="swiper-btns swiper-top-btn d-flex align-items-center justify-content-end gap-4">
-                            <div class="top-listens-2-prev button-prev fs-lg">
+                            <div class="youtube-lives-prev button-prev fs-lg">
                                 <i class="fas fa-chevron-left"></i>
                             </div>
-                            <div class="top-listens-2-next button-next fs-lg">
+                            <div class="youtube-lives-next button-next fs-lg">
                                 <i class="fas fa-chevron-right"></i>
                             </div>
                         </div>
@@ -591,325 +593,92 @@
                 </div>
             </div>
 
-            <div class="container-fluid">
-                <div class="swiper top-listens-02" data-aos="fade-up">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="featured-show-card p-xxl-8 p-6 rounded">
-                                <div class="d-flex align-items-sm-center flex-column flex-sm-row gap-xxl-8 gap-xl-6 gap-4">
-                                    <div class="img-area">
-                                        <img class="w-100 rounded" src="{{ asset('assets/img/shows-5.png') }}" alt="Charlas">
-                                    </div>
-                                    <div class="content-area">
-                                        <h4 class="show-title mb-4 fw-semibold">Cancion del Río</h4>
-                                        <a href="https://youtu.be/pUsEY8Z8qOk?si=Tkqs81zGIolFQMXh" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
-                                            <span class="tcp-1"><i class="fas fa-microphone"></i></span>
-                                            <span class="fs-lg fw-medium link-text">Estudio Bohemio Ritual</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="play-podcast-area my-lg-8 my-sm-6 my-4">
-                                    <div class="audio-player">
-                                        <div class="play-audio">
-                                            <a href="https://youtu.be/pUsEY8Z8qOk?si=KcxTSKUhmhRpw9pO" target="_blank" rel="noopener noreferrer" class="toggle-play play fs-xl tcn-900">
-                                                <i class="fas fa-play"></i>
-                                            </a>
+            @if(isset($youtubeLives) && $youtubeLives->count())
+                <div class="container-fluid">
+                    <div class="swiper youtube-lives-swiper" data-aos="fade-up">
+                        <div class="swiper-wrapper">
+                            @foreach($youtubeLives as $live)
+                                <div class="swiper-slide">
+                                    <div class="featured-show-card p-xxl-8 p-6 rounded">
+                                        <div class="d-flex align-items-sm-center flex-column flex-sm-row gap-xxl-8 gap-xl-6 gap-4">
+                                            <div class="img-area">
+                                                <img class="w-100 rounded" src="{{ $live['thumbnail'] }}" alt="{{ $live['title'] }}">
+                                            </div>
+
+                                            <div class="content-area">
+                                                <h4 class="show-title mb-4 fw-semibold">{{ $live['title'] }}</h4>
+
+                                                <a href="{{ $live['url'] }}" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
+                                                    <span class="tcp-1"><i class="fas fa-microphone"></i></span>
+                                                    <span class="fs-lg fw-medium link-text">Estudio Bohemio Ritual</span>
+                                                </a>
+                                            </div>
                                         </div>
-                                        <div class="controls">
-                                            <div class="timeline mb-2"><div class="progress"></div></div>
-                                            <div class="time-and-volume">
-                                                <div class="time">
-                                                    <div class="current fs-sm">3:07</div>
-                                                    <div class="length fs-sm"></div>
+
+                                        <div class="play-podcast-area my-lg-8 my-sm-6 my-4">
+                                            <div class="audio-player">
+                                                <div class="play-audio">
+                                                    <a href="{{ $live['url'] }}" target="_blank" rel="noopener noreferrer" class="toggle-play play fs-xl tcn-900">
+                                                        <i class="fas fa-play"></i>
+                                                    </a>
                                                 </div>
-                                                <div class="volume-container">
-                                                    <div class="volume-button"><i class="fas fa-volume-up"></i></div>
-                                                    <div class="volume-slider"><div class="volume-percentage"></div></div>
+
+                                                <div class="controls">
+                                                    <div class="timeline mb-2">
+                                                        <div class="progress"></div>
+                                                    </div>
+
+                                                    <div class="time-and-volume">
+                                                        <div class="time">
+                                                            <div class="current fs-sm">{{ $live['duration'] ?: 'Ver vivo' }}</div>
+                                                            <div class="length fs-sm"></div>
+                                                        </div>
+
+                                                        <div class="volume-container">
+                                                            <div class="volume-button">
+                                                                <i class="fas fa-volume-up"></i>
+                                                            </div>
+                                                            <div class="volume-slider">
+                                                                <div class="volume-percentage"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                                {{-- <div class="d-between">
-                                    <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="link-btn">Ver canal</a>
-                                    <span class="tag-btn">Mesa</span>
-                                </div> --}}
-                            </div>
-                        </div>
 
-                        <div class="swiper-slide">
-                            <div class="featured-show-card p-xxl-8 p-6 rounded">
-                                <div class="d-flex align-items-sm-center flex-column flex-sm-row gap-xxl-8 gap-xl-6 gap-4">
-                                    <div class="img-area">
-                                        <img class="w-100 rounded" src="{{ asset('assets/img/shows-6.png') }}" alt="Entrevistas">
-                                    </div>
-                                    <div class="content-area">
-                                        <h4 class="show-title mb-4 fw-semibold">Mientras Bailas</h4>
-                                        <a href="https://youtu.be/MU5CiKWqT10?si=ZEH142g0iamud1B7" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
-                                            <span class="tcp-1"><i class="fas fa-microphone"></i></span>
-                                            <span class="fs-lg fw-medium link-text">Estudio Bohemio Ritual</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="play-podcast-area my-lg-8 my-sm-6 my-4">
-                                    <div class="audio-player">
-                                        <div class="play-audio">
-                                            <a href="https://youtu.be/MU5CiKWqT10?si=ZEH142g0iamud1B7" target="_blank" rel="noopener noreferrer" class="toggle-play play fs-xl tcn-900">
-                                                <i class="fas fa-play"></i>
-                                            </a>
-                                        </div>
-                                        <div class="controls">
-                                            <div class="timeline mb-2"><div class="progress"></div></div>
-                                            <div class="time-and-volume">
-                                                <div class="time">
-                                                    <div class="current fs-sm">4:13</div>
-                                                    <div class="length fs-sm"></div>
-                                                </div>
-                                                <div class="volume-container">
-                                                    <div class="volume-button"><i class="fas fa-volume-up"></i></div>
-                                                    <div class="volume-slider"><div class="volume-percentage"></div></div>
-                                                </div>
-                                            </div>
+                                        <div class="d-between">
+                                            <a href="{{ $live['url'] }}" target="_blank" rel="noopener noreferrer" class="link-btn">Ver vivo</a>
+                                            <span class="tag-btn">YouTube</span>
                                         </div>
                                     </div>
                                 </div>
-                                {{-- <div class="d-between">
-                                    <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="link-btn">Suscribite</a>
-                                    <span class="tag-btn">Artistas</span>
-                                </div> --}}
-                            </div>
+                            @endforeach
                         </div>
-
-                        <div class="swiper-slide">
-                            <div class="featured-show-card p-xxl-8 p-6 rounded">
-                                <div class="d-flex align-items-sm-center flex-column flex-sm-row gap-xxl-8 gap-xl-6 gap-4">
-                                    <div class="img-area">
-                                        <img class="w-100 rounded" src="{{ asset('assets/img/shows-7.png') }}" alt="Folklore">
-                                    </div>
-                                    <div class="content-area">
-                                        <h4 class="show-title mb-4 fw-semibold">Horizonte de Octubre</h4>
-                                        <a href="https://youtu.be/bsWm61cMoGs?si=DuyU7c3RqjmBvb5E" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
-                                            <span class="tcp-1"><i class="fas fa-microphone"></i></span>
-                                            <span class="fs-lg fw-medium link-text">Estudio Bohemio Ritual</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="play-podcast-area my-lg-8 my-sm-6 my-4">
-                                    <div class="audio-player">
-                                        <div class="play-audio">
-                                            <a href="https://youtu.be/bsWm61cMoGs?si=DuyU7c3RqjmBvb5E" target="_blank" rel="noopener noreferrer" class="toggle-play play fs-xl tcn-900">
-                                                <i class="fas fa-play"></i>
-                                            </a>
-                                        </div>
-                                        <div class="controls">
-                                            <div class="timeline mb-2"><div class="progress"></div></div>
-                                            <div class="time-and-volume">
-                                                <div class="time">
-                                                    <div class="current fs-sm">4:31</div>
-                                                    <div class="length fs-sm"></div>
-                                                </div>
-                                                <div class="volume-container">
-                                                    <div class="volume-button"><i class="fas fa-volume-up"></i></div>
-                                                    <div class="volume-slider"><div class="volume-percentage"></div></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{-- <div class="d-between">
-                                    <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="link-btn">Ir al canal</a>
-                                    <span class="tag-btn">Folklore</span>
-                                </div> --}}
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="featured-show-card p-xxl-8 p-6 rounded">
-                                <div class="d-flex align-items-sm-center flex-column flex-sm-row gap-xxl-8 gap-xl-6 gap-4">
-                                    <div class="img-area">
-                                        <img class="w-100 rounded" src="{{ asset('assets/img/shows-8.png') }}" alt="Folklore">
-                                    </div>
-                                    <div class="content-area">
-                                        <h4 class="show-title mb-4 fw-semibold">Jazmin de Luna</h4>
-                                        <a href="https://youtu.be/mx0XCCpkMjw?si=HXojZNAu9GfS2rGp" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
-                                            <span class="tcp-1"><i class="fas fa-microphone"></i></span>
-                                            <span class="fs-lg fw-medium link-text">Estudio Bohemio Ritual</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="play-podcast-area my-lg-8 my-sm-6 my-4">
-                                    <div class="audio-player">
-                                        <div class="play-audio">
-                                            <a href="https://youtu.be/mx0XCCpkMjw?si=HXojZNAu9GfS2rGp" target="_blank" rel="noopener noreferrer" class="toggle-play play fs-xl tcn-900">
-                                                <i class="fas fa-play"></i>
-                                            </a>
-                                        </div>
-                                        <div class="controls">
-                                            <div class="timeline mb-2"><div class="progress"></div></div>
-                                            <div class="time-and-volume">
-                                                <div class="time">
-                                                    <div class="current fs-sm">4:31</div>
-                                                    <div class="length fs-sm"></div>
-                                                </div>
-                                                <div class="volume-container">
-                                                    <div class="volume-button"><i class="fas fa-volume-up"></i></div>
-                                                    <div class="volume-slider"><div class="volume-percentage"></div></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{-- <div class="d-between">
-                                    <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="link-btn">Ir al canal</a>
-                                    <span class="tag-btn">Folklore</span>
-                                </div> --}}
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="featured-show-card p-xxl-8 p-6 rounded">
-                                <div class="d-flex align-items-sm-center flex-column flex-sm-row gap-xxl-8 gap-xl-6 gap-4">
-                                    <div class="img-area">
-                                        <img class="w-100 rounded" src="{{ asset('assets/img/shows-1.png') }}" alt="Folklore">
-                                    </div>
-                                    <div class="content-area">
-                                        <h4 class="show-title mb-4 fw-semibold">Zona de Promesas</h4>
-                                        <a href="https://youtu.be/hzMaO1RzSck?si=okYDnLRBr5xjdz9H" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
-                                            <span class="tcp-1"><i class="fas fa-microphone"></i></span>
-                                            <span class="fs-lg fw-medium link-text">Estudio Bohemio Ritual</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="play-podcast-area my-lg-8 my-sm-6 my-4">
-                                    <div class="audio-player">
-                                        <div class="play-audio">
-                                            <a href="https://youtu.be/hzMaO1RzSck?si=okYDnLRBr5xjdz9H" target="_blank" rel="noopener noreferrer" class="toggle-play play fs-xl tcn-900">
-                                                <i class="fas fa-play"></i>
-                                            </a>
-                                        </div>
-                                        <div class="controls">
-                                            <div class="timeline mb-2"><div class="progress"></div></div>
-                                            <div class="time-and-volume">
-                                                <div class="time">
-                                                    <div class="current fs-sm">3:27</div>
-                                                    <div class="length fs-sm"></div>
-                                                </div>
-                                                <div class="volume-container">
-                                                    <div class="volume-button"><i class="fas fa-volume-up"></i></div>
-                                                    <div class="volume-slider"><div class="volume-percentage"></div></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{-- <div class="d-between">
-                                    <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="link-btn">Ir al canal</a>
-                                    <span class="tag-btn">Folklore</span>
-                                </div> --}}
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="featured-show-card p-xxl-8 p-6 rounded">
-                                <div class="d-flex align-items-sm-center flex-column flex-sm-row gap-xxl-8 gap-xl-6 gap-4">
-                                    <div class="img-area">
-                                        <img class="w-100 rounded" src="{{ asset('assets/img/shows-2.png') }}" alt="Folklore">
-                                    </div>
-                                    <div class="content-area">
-                                        <h4 class="show-title mb-4 fw-semibold">No Deberías</h4>
-                                        <a href="https://youtu.be/sAAJL0f__Y8?si=dCFHifJb5Z6RuNuy" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
-                                            <span class="tcp-1"><i class="fas fa-microphone"></i></span>
-                                            <span class="fs-lg fw-medium link-text">Estudio Bohemio Ritual</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="play-podcast-area my-lg-8 my-sm-6 my-4">
-                                    <div class="audio-player">
-                                        <div class="play-audio">
-                                            <a href="https://youtu.be/sAAJL0f__Y8?si=dCFHifJb5Z6RuNuy" target="_blank" rel="noopener noreferrer" class="toggle-play play fs-xl tcn-900">
-                                                <i class="fas fa-play"></i>
-                                            </a>
-                                        </div>
-                                        <div class="controls">
-                                            <div class="timeline mb-2"><div class="progress"></div></div>
-                                            <div class="time-and-volume">
-                                                <div class="time">
-                                                    <div class="current fs-sm">3:30</div>
-                                                    <div class="length fs-sm"></div>
-                                                </div>
-                                                <div class="volume-container">
-                                                    <div class="volume-button"><i class="fas fa-volume-up"></i></div>
-                                                    <div class="volume-slider"><div class="volume-percentage"></div></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{-- <div class="d-between">
-                                    <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="link-btn">Ir al canal</a>
-                                    <span class="tag-btn">Folklore</span>
-                                </div> --}}
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="featured-show-card p-xxl-8 p-6 rounded">
-                                <div class="d-flex align-items-sm-center flex-column flex-sm-row gap-xxl-8 gap-xl-6 gap-4">
-                                    <div class="img-area">
-                                        <img class="w-100 rounded" src="{{ asset('assets/img/shows-3.png') }}" alt="Folklore">
-                                    </div>
-                                    <div class="content-area">
-                                        <h4 class="show-title mb-4 fw-semibold">Chacarera del 55</h4>
-                                        <a href="https://youtu.be/zbP6xxZGXYw?si=tBH8uMiVcrLsrccr" target="_blank" rel="noopener noreferrer" class="episode-host d-flex align-items-center gap-2">
-                                            <span class="tcp-1"><i class="fas fa-microphone"></i></span>
-                                            <span class="fs-lg fw-medium link-text">Estudio Bohemio Ritual</span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="play-podcast-area my-lg-8 my-sm-6 my-4">
-                                    <div class="audio-player">
-                                        <div class="play-audio">
-                                            <a href="https://youtu.be/zbP6xxZGXYw?si=tBH8uMiVcrLsrccr" target="_blank" rel="noopener noreferrer" class="toggle-play play fs-xl tcn-900">
-                                                <i class="fas fa-play"></i>
-                                            </a>
-                                        </div>
-                                        <div class="controls">
-                                            <div class="timeline mb-2"><div class="progress"></div></div>
-                                            <div class="time-and-volume">
-                                                <div class="time">
-                                                    <div class="current fs-sm">4:31</div>
-                                                    <div class="length fs-sm"></div>
-                                                </div>
-                                                <div class="volume-container">
-                                                    <div class="volume-button"><i class="fas fa-volume-up"></i></div>
-                                                    <div class="volume-slider"><div class="volume-percentage"></div></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{-- <div class="d-between">
-                                    <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="link-btn">Ir al canal</a>
-                                    <span class="tag-btn">Folklore</span>
-                                </div> --}}
-                            </div>
-                        </div>
-
                     </div>
 
                     <div class="mt-lg-10 mt-8 text-center">
-                        <div class="top-listens-2-swiper-pagination d-none d-lg-block custom-swiper-pagination"></div>
+                        <div class="youtube-lives-pagination d-none d-lg-block custom-swiper-pagination"></div>
+
                         <div class="swiper-btns swiper-bottom-btn d-flex d-lg-none align-items-center justify-content-center gap-4">
-                            <div class="top-listens-2-prev button-prev fs-lg">
+                            <div class="youtube-lives-prev button-prev fs-lg">
                                 <i class="fas fa-chevron-left"></i>
                             </div>
-                            <div class="top-listens-2-next button-next fs-lg">
+                            <div class="youtube-lives-next button-next fs-lg">
                                 <i class="fas fa-chevron-right"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @else
+                <div class="container">
+                    <div class="featured-show-card p-xxl-8 p-6 rounded text-center">
+                        <h4 class="show-title mb-4 fw-semibold">Próximamente nuevos vivos</h4>
+                        <p class="mb-6">Todavía no hay transmisiones disponibles para mostrar desde YouTube.</p>
+                        <a href="https://www.youtube.com/@BohemioRitual" target="_blank" rel="noopener noreferrer" class="link-btn">Ir al canal</a>
+                    </div>
+                </div>
+            @endif
         </div>
 
         <div class="bottom-wave-shape">
@@ -917,204 +686,54 @@
         </div>
     </section>
 
-    <section class="testimonial-section-02 pt-120 pb-120 texture-bg-2" id="testimonios">
-        <div class="sun-shape sun-shape-4 d-none d-md-block">
-            <img src="{{ asset('assets/img/sun.png') }}" alt="sun">
-        </div>
-        <div class="sun-shape sun-shape-5 d-none d-md-block">
-            <img src="{{ asset('assets/img/sun.png') }}" alt="sun">
-        </div>
-        <div class="container">
-            <div class="row align-items-center mb-lg-15 mb-sm-10 mb-8" data-aos="flip-left">
-                <div class="col-lg-8">
-                    <div class="text-center text-lg-start">
-                        <span class="subheading-border fw-medium mb-4 fs-xl">
-                            <span class="fs-2xl">
-                                <i class="fas fa-rocket"></i>
-                            </span>
-                            Comunidad
-                        </span>
-                        <span class="display-four">Lo que transmite Bohemio Ritual en su audiencia</span>
-                    </div>
-                </div>
-                <div class="col-lg-4 d-none d-lg-block">
-                    <div class="swiper-btns swiper-top-btn d-flex align-items-center justify-content-end gap-4">
-                        <div class="ts-swiper-2-prev button-prev fs-lg"><i class="fas fa-chevron-left"></i></div>
-                        <div class="ts-swiper-2-next button-next fs-lg"><i class="fas fa-chevron-right"></i></div>
-                    </div>
-                </div>
-            </div>
+    <style>
+        .top-listens-list-02 .top-listens-list-wrapper {
+            padding-top: 80px !important;
+            padding-bottom: 80px !important;
+        }
 
-            <div class="swiper testimonial-swiper-2" data-aos="fade-up">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="testimonial-card d-flex flex-column flex-sm-row align-items-center gap-xxl-10 gap-xl-8 gap-sm-4 gap-2 p-xxl-8 p-xl-6 p-4 bgc-2 rounded">
-                            <div class="img-wrapper d-flex gap-xl-6 gap-2">
-                                <div class="position-relative d-flex flex-lg-column flex-row">
-                                    <div class="ts-user rounded-circle">
-                                        <img class="w-100 rounded-circle" src="{{ asset('assets/img/ts-user.png') }}" alt="comentario">
-                                    </div>
-                                    <div class="record-shape">
-                                        <img class="w-100" src="{{ asset('assets/img/record-5.png') }}" alt="record">
-                                    </div>
-                                </div>
-                                <div class="vl-shape d-none d-sm-block">
-                                    <img class="w-100 h-100" src="{{ asset('assets/img/vl-shape.png') }}" alt="vl-shape">
-                                </div>
-                            </div>
-                            <div class="content-area text-center text-sm-start">
-                                <ul class="rating-list d-flex justify-content-center justify-content-sm-start gap-lg-2 gap-1 tcp-1 mb-lg-4 mb-2">
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star-half-alt"></i></li>
-                                </ul>
-                                <p class="quote-text fs-xl mb-4">
-                                    “No se siente como un contenido armado. Se siente como estar presente en una charla que vale la pena escuchar.”
-                                </p>
-                                <div class="d-between justify-content-center justify-content-sm-between bt-2 pt-lg-6 pt-4">
-                                    <div class="user-info">
-                                        <h4 class="user-name fw-semibold mb-2">Seguidores del canal</h4>
-                                        <span class="user-position">Comunidad ritualera</span>
-                                    </div>
-                                    <div class="quote-icon d-none d-sm-block">
-                                        <img class="w-100" src="{{ asset('assets/img/quote.png') }}" alt="quote">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        .top-listens-list-02 .container.mb-lg-15 {
+            margin-bottom: 40px !important;
+        }
 
-                    <div class="swiper-slide">
-                        <div class="testimonial-card d-flex flex-column flex-sm-row align-items-center gap-xxl-10 gap-xl-8 gap-sm-4 gap-2 p-xxl-8 p-xl-6 p-4 bgc-2 rounded">
-                            <div class="img-wrapper d-flex gap-xl-6 gap-2">
-                                <div class="position-relative d-flex flex-lg-column flex-row">
-                                    <div class="ts-user rounded-circle">
-                                        <img class="w-100 rounded-circle" src="{{ asset('assets/img/ts-user-2.png') }}" alt="comentario">
-                                    </div>
-                                    <div class="record-shape">
-                                        <img class="w-100" src="{{ asset('assets/img/record-5.png') }}" alt="record">
-                                    </div>
-                                </div>
-                                <div class="vl-shape d-none d-sm-block">
-                                    <img class="w-100 h-100" src="{{ asset('assets/img/vl-shape.png') }}" alt="vl-shape">
-                                </div>
-                            </div>
-                            <div class="content-area text-center text-sm-start">
-                                <ul class="rating-list d-flex justify-content-center justify-content-sm-start gap-lg-2 gap-1 tcp-1 mb-lg-4 mb-2">
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star-half-alt"></i></li>
-                                </ul>
-                                <p class="quote-text fs-xl mb-4">
-                                    “Tiene algo que hoy escasea: identidad. No intenta copiar, intenta construir su propia mística.”
-                                </p>
-                                <div class="d-between justify-content-center justify-content-sm-between bt-2 pt-lg-6 pt-4">
-                                    <div class="user-info">
-                                        <h4 class="user-name fw-semibold mb-2">Audiencia en crecimiento</h4>
-                                        <span class="user-position">Valoración del proyecto</span>
-                                    </div>
-                                    <div class="quote-icon d-none d-sm-block">
-                                        <img class="w-100" src="{{ asset('assets/img/quote.png') }}" alt="quote">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        .youtube-lives-swiper {
+            padding-bottom: 10px !important;
+            overflow: hidden !important;
+        }
 
-                    <div class="swiper-slide">
-                        <div class="testimonial-card d-flex flex-column flex-sm-row align-items-center gap-xxl-10 gap-xl-8 gap-sm-4 gap-2 p-xxl-8 p-xl-6 p-4 bgc-2 rounded">
-                            <div class="img-wrapper d-flex gap-xl-6 gap-2">
-                                <div class="position-relative d-flex flex-lg-column flex-row">
-                                    <div class="ts-user rounded-circle">
-                                        <img class="w-100 rounded-circle" src="{{ asset('assets/img/ts-user.png') }}" alt="comentario">
-                                    </div>
-                                    <div class="record-shape">
-                                        <img class="w-100" src="{{ asset('assets/img/record-5.png') }}" alt="record">
-                                    </div>
-                                </div>
-                                <div class="vl-shape d-none d-sm-block">
-                                    <img class="w-100 h-100" src="{{ asset('assets/img/vl-shape.png') }}" alt="vl-shape">
-                                </div>
-                            </div>
-                            <div class="content-area text-center text-sm-start">
-                                <ul class="rating-list d-flex justify-content-center justify-content-sm-start gap-lg-2 gap-1 tcp-1 mb-lg-4 mb-2">
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star-half-alt"></i></li>
-                                </ul>
-                                <p class="quote-text fs-xl mb-4">
-                                    “La mezcla de folklore, charla y cercanía le da una personalidad que no se siente impostada.”
-                                </p>
-                                <div class="d-between justify-content-center justify-content-sm-between bt-2 pt-lg-6 pt-4">
-                                    <div class="user-info">
-                                        <h4 class="user-name fw-semibold mb-2">Seguidores nuevos</h4>
-                                        <span class="user-position">Primera impresión real</span>
-                                    </div>
-                                    <div class="quote-icon d-none d-sm-block">
-                                        <img class="w-100" src="{{ asset('assets/img/quote.png') }}" alt="quote">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        .youtube-lives-swiper .swiper-slide {
+            height: auto !important;
+        }
 
-                    <div class="swiper-slide">
-                        <div class="testimonial-card d-flex flex-column flex-sm-row align-items-center gap-xxl-10 gap-xl-8 gap-sm-4 gap-2 p-xxl-8 p-xl-6 p-4 bgc-2 rounded">
-                            <div class="img-wrapper d-flex gap-xl-6 gap-2">
-                                <div class="position-relative d-flex flex-lg-column flex-row">
-                                    <div class="ts-user rounded-circle">
-                                        <img class="w-100 rounded-circle" src="{{ asset('assets/img/ts-user-2.png') }}" alt="comentario">
-                                    </div>
-                                    <div class="record-shape">
-                                        <img class="w-100" src="{{ asset('assets/img/record-5.png') }}" alt="record">
-                                    </div>
-                                </div>
-                                <div class="vl-shape d-none d-sm-block">
-                                    <img class="w-100 h-100" src="{{ asset('assets/img/vl-shape.png') }}" alt="vl-shape">
-                                </div>
-                            </div>
-                            <div class="content-area text-center text-sm-start">
-                                <ul class="rating-list d-flex justify-content-center justify-content-sm-start gap-lg-2 gap-1 tcp-1 mb-lg-4 mb-2">
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star"></i></li>
-                                    <li><i class="fas fa-star-half-alt"></i></li>
-                                </ul>
-                                <p class="quote-text fs-xl mb-4">
-                                    “Cuando un canal tiene verdad, se nota. Y acá hay una búsqueda clara de identidad cultural y humana.”
-                                </p>
-                                <div class="d-between justify-content-center justify-content-sm-between bt-2 pt-lg-6 pt-4">
-                                    <div class="user-info">
-                                        <h4 class="user-name fw-semibold mb-2">Comunidad del proyecto</h4>
-                                        <span class="user-position">Acompañando el crecimiento</span>
-                                    </div>
-                                    <div class="quote-icon d-none d-sm-block">
-                                        <img class="w-100" src="{{ asset('assets/img/quote.png') }}" alt="quote">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        .youtube-lives-swiper .featured-show-card {
+            height: 100% !important;
+        }
 
-                <div class="mt-lg-10 mt-8 text-center">
-                    <div class="swiper-btns swiper-bottom-btn d-flex d-lg-none align-items-center justify-content-center gap-4">
-                        <div class="ts-swiper-2-prev button-prev fs-lg"><i class="fas fa-chevron-left"></i></div>
-                        <div class="ts-swiper-2-next button-next fs-lg"><i class="fas fa-chevron-right"></i></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        .youtube-lives-swiper .img-area {
+            max-width: 180px !important;
+            width: 100% !important;
+            flex-shrink: 0 !important;
+        }
 
-    <section class="news-letter-section-02 texture-bg" id="newsletter-02">
+        .youtube-lives-swiper .img-area img {
+            aspect-ratio: 16 / 9 !important;
+            object-fit: cover !important;
+        }
+
+        .youtube-lives-swiper .show-title {
+            display: -webkit-box !important;
+            -webkit-line-clamp: 2 !important;
+            -webkit-box-orient: vertical !important;
+            overflow: hidden !important;
+        }
+
+        @media (max-width: 575px) {
+            .youtube-lives-swiper .img-area {
+                max-width: 100% !important;
+            }
+        }
+    </style>
+<section class="news-letter-section-02 texture-bg" id="newsletter-02">
         <div class="top-wave-shape mt-n1">
             <img class="w-100" src="{{ asset('assets/img/top-wave-shape.png') }}" alt="wave shape">
         </div>
@@ -1166,7 +785,7 @@
                             <li><a href="#about-bohemio">Sobre el canal</a></li>
                             <li><a href="#recentes">Contenido reciente</a></li>
                             <li><a href="#top-shows">Programas destacados</a></li>
-                            <li><a href="#testimonios">Comunidad</a></li>
+                            <li><a href="#top-shows">Comunidad</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1270,3 +889,37 @@
     </footer>
 @endsection
 
+@push('scripts')
+<script>
+    $(document).ready(function () {
+        const totalSlides = $('.youtube-lives-swiper .swiper-slide').length;
+
+        if (typeof Swiper !== 'undefined' && totalSlides > 0) {
+            new Swiper('.youtube-lives-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 24,
+                loop: totalSlides > 3,
+                navigation: {
+                    nextEl: '.youtube-lives-next',
+                    prevEl: '.youtube-lives-prev',
+                },
+                pagination: {
+                    el: '.youtube-lives-pagination',
+                    clickable: true,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 1,
+                    },
+                    992: {
+                        slidesPerView: 2,
+                    },
+                    1400: {
+                        slidesPerView: 3,
+                    }
+                }
+            });
+        }
+    });
+</script>
+@endpush
